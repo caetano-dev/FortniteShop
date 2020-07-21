@@ -1,4 +1,4 @@
-# FotniteItemShop
+# Fotnite Item Shop
 
 This application is an open source project that provides the Fortnite item shop collecting data from an API.
 
