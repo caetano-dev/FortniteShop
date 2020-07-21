@@ -1,0 +1,23 @@
+{
+  "name": "fortniteshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drull1000/FotniteItemShop.git"
+  },
+  "author": "Drull",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drull1000/FotniteItemShop/issues"
+  },
+  "homepage": "https://github.com/drull1000/FotniteItemShop#readme",
+  "devDependencies": {
+    "electron": "^9.1.1"
+  }
+}
