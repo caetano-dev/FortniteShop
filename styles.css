@@ -1,0 +1,67 @@
+.title {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 35px;
+  font-weight: 100;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #f35626;
+  background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: hue 10s infinite linear;
+}
+
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
+}
+.container {
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(
+    90deg,
+    rgba(3, 85, 159, 1) 0%,
+    rgb(33, 126, 136) 50%,
+    rgba(3, 85, 159, 1) 100%
+  );
+}
+.column {
+  float: left;
+  width: 33.33%;
+}
+.column1 {
+  float: left;
+  width: 33.33%;
+}
+.price {
+  margin-top: auto;
+}
+.vbuck {
+  width: 12%;
+  display: flex;
+  margin-inline-start: auto;
+  margin-bottom: auto;
+}
+img {
+  display: flex;
+  margin-right: auto;
+  width: 100%;
+  top: 86px;
+  right: 92px;
+  transform: scale(1);
+  transition: transform 0.5s;
+}
+.img:hover {
+  transform: scale(1.1);
+}
+p {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 20px;
+  color: #dfdfdf;
+  font-weight: 700;
+  text-shadow: 1px 1px #0e0c0c;
+}
