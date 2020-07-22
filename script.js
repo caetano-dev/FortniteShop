@@ -13,14 +13,18 @@ http.onload = function () {
   let featuredprice = []; /*featured items price*/
 
   for (let i = 0; i < response.daily.length; i++) {
-    let name = response.daily[i].name;
     let image = response.daily[i].image;
     let price = response.daily[i].price;
-    listname.push(name);
+    var name = response.daily[i].name;
+    if (name.length > 23) {
+      var name = name.slice(0, 23);
+      var name = name + "...";
+    }
     listimage.push(image);
     listprice.push(price);
+    listname.push(name);
   }
-
+  // 23
   for (let i = 0; i < response.featured.length; i++) {
     let name = response.featured[i].name;
     let image = response.featured[i].image;
