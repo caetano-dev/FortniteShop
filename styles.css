@@ -37,6 +37,10 @@
   float: left;
   width: 33.33%;
 }
+.column2 {
+  float: left;
+  width: 33.33%;
+}
 .price {
   margin-top: auto;
 }
