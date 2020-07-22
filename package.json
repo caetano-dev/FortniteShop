@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/drull1000/FotniteItemShop.git"
+    "url": "git+https://github.com/drull1000/Fortnite.git"
   },
   "author": "Drull",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/drull1000/FotniteItemShop/issues"
+    "url": "https://github.com/drull1000/Fortnite/issues"
   },
-  "homepage": "https://github.com/drull1000/FotniteItemShop#readme",
+  "homepage": "https://github.com/drull1000/Fortnite#readme",
   "devDependencies": {
     "electron": "^9.1.1"
   }
