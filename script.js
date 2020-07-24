@@ -1,55 +1,31 @@
 const http = new XMLHttpRequest();
 http.open("GET", "https://fortniteapi.io/shop?lang=pt-BR");
-http.setRequestHeader("Authorization", "YOUR API KEY GOES HERE");
+http.setRequestHeader("Authorization", "317d3abf-1a3d48f7-97c5748f-16174ba3");
 http.send();
 http.onload = function () {
   const response = JSON.parse(http.responseText);
 
-  let dailyname = []; /*daily items name*/
-  let dailyimage = []; /*daily items image*/
-  let dailyprice = []; /*daily items price*/
-  let featuredname = []; /*featured items name*/
-  let featuredimage = []; /*featured items image*/
-  let featuredprice = []; /*featured items price*/
-  let specialFeaturedname = []; /*special items name*/
-  let specialFeaturedimage = []; /*special items image*/
-  let specialFeaturedprice = []; /*special items price*/
+  let dailylist = response.daily;
+  let featuredlist = response.featured;
+  let specialFeaturedlist = response.specialFeatured;
 
-  for (let i = 0; i < response.daily.length; i++) {
+  let dailyimage = []; /*daily items image*/
+  let featuredimage = []; /*featured items image*/
+  let specialFeaturedimage = []; /*special items image*/
+
+  for (let i = 0; i < dailylist.length; i++) {
     let image = response.daily[i].image;
-    let price = response.daily[i].price;
-    var name = response.daily[i].name;
-    if (name.length > 23) {
-      var name = name.slice(0, 23);
-      var name = name + "...";
-    }
     dailyimage.push(image);
-    dailyprice.push(price);
-    dailyname.push(name);
   }
-  for (let i = 0; i < response.featured.length; i++) {
-    let image = response.featured[i].image;
-    let price = response.featured[i].price;
-    var name = response.featured[i].name;
-    if (name.length > 23) {
-      var name = name.slice(0, 23);
-      var name = name + "...";
-    }
+
+  for (let i = 0; i < featuredlist.length; i++) {
+    let image = featuredlist[i].image;
     featuredimage.push(image);
-    featuredprice.push(price);
-    featuredname.push(name);
   }
-  for (let i = 0; i < response.specialFeatured.length; i++) {
-    let image = response.specialFeatured[i].image;
-    let price = response.specialFeatured[i].price;
-    var name = response.specialFeatured[i].name;
-    if (name.length > 23) {
-      var name = name.slice(0, 23);
-      var name = name + "...";
-    }
+
+  for (let i = 0; i < specialFeaturedlist.length; i++) {
+    let image = specialFeaturedlist[i].image;
     specialFeaturedimage.push(image);
-    specialFeaturedprice.push(price);
-    specialFeaturedname.push(name);
   }
 
   /*===================================================================*/
@@ -76,9 +52,16 @@ http.onload = function () {
     const price = document.createElement("p");
 
     p.setAttribute("class", "column");
-    p.textContent = dailyname[i];
+    if (dailylist[i].name.length > 23) {
+      var name = dailylist[i].name.slice(0, 23);
+      var name = name + "...";
+      p.textContent = name;
+    } else {
+      p.textContent = dailylist[i].name;
+    }
+
     price.setAttribute("class", "price");
-    price.textContent = dailyprice[i];
+    price.textContent = dailylist[i].price;
     vbuck.setAttribute("class", "vbuck");
     vbuck.setAttribute("alt", "vbuck");
     vbuck.setAttribute(
@@ -93,6 +76,7 @@ http.onload = function () {
     document.getElementsByClassName("column")[i].appendChild(vbuck);
     document.getElementsByClassName("column")[i].appendChild(price);
   }
+
   /*===================================================================*/
   /*Get all featured*/
   for (let i = 0; i < featuredimage.length; i++) {
@@ -103,7 +87,7 @@ http.onload = function () {
 
     div.setAttribute("class", "column1");
     price.setAttribute("class", "price");
-    price.textContent = featuredprice[i];
+    price.textContent = featuredlist[i].price;
     vbuck.setAttribute("class", "vbuck");
     vbuck.setAttribute("alt", "vbuck");
     vbuck.setAttribute(
@@ -111,7 +95,14 @@ http.onload = function () {
       "https://image.fnbr.co/price/icon_vbucks_50x.png"
     );
     p.setAttribute("class", "column1");
-    p.textContent = featuredname[i];
+    if (featuredlist[i].name.length > 23) {
+      var name = featuredlist[i].name.slice(0, 23);
+      var name = name + "...";
+      p.textContent = name;
+    } else {
+      p.textContent = featuredlist[i].name;
+    }
+
     img.setAttribute("src", featuredimage[i]);
     img.setAttribute("class", "img");
     img.setAttribute("alt", `img${i}`);
@@ -128,7 +119,7 @@ http.onload = function () {
 
     div.setAttribute("class", "column2");
     price.setAttribute("class", "price");
-    price.textContent = specialFeaturedprice[i];
+    price.textContent = specialFeaturedlist[i].price;
     vbuck.setAttribute("class", "vbuck");
     vbuck.setAttribute("alt", "vbuck");
     vbuck.setAttribute(
@@ -136,7 +127,13 @@ http.onload = function () {
       "https://image.fnbr.co/price/icon_vbucks_50x.png"
     );
     p.setAttribute("class", "column2");
-    p.textContent = specialFeaturedname[i];
+    if (specialFeaturedlist[i].name.length > 23) {
+      var name = specialFeaturedlist[i].name.slice(0, 23);
+      var name = name + "...";
+      p.textContent = name;
+    } else {
+      p.textContent = specialFeaturedlist[i].name;
+    }
     img.setAttribute("src", specialFeaturedimage[i]);
     img.setAttribute("class", "img");
     img.setAttribute("alt", `img${i}`);
