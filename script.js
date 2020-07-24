@@ -1,6 +1,6 @@
 const http = new XMLHttpRequest();
 http.open("GET", "https://fortniteapi.io/shop?lang=pt-BR");
-http.setRequestHeader("Authorization", "317d3abf-1a3d48f7-97c5748f-16174ba3");
+http.setRequestHeader("Authorization", "YOUR API KEY GOES HERE");
 http.send();
 http.onload = function () {
   const response = JSON.parse(http.responseText);
