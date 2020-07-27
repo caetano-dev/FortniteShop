@@ -1,6 +1,6 @@
 const http = new XMLHttpRequest();
 http.open("GET", "https://fortniteapi.io/shop?lang=pt-BR");
-http.setRequestHeader("Authorization", "YOUR API KEY GOES HERE");
+http.setRequestHeader("Authorization", "317d3abf-1a3d48f7-97c5748f-16174ba3");
 http.send();
 http.onload = function () {
   const response = JSON.parse(http.responseText);
@@ -30,116 +30,49 @@ http.onload = function () {
 
   /*===================================================================*/
   /*variables for 3 divs*/
-  let div1 = document.createElement("div");
+  const div1 = document.createElement("div");
   div1.setAttribute("class", "row");
   document.getElementsByClassName("container")[0].appendChild(div1);
-
-  let div2 = document.createElement("div");
-  div2.setAttribute("class", "row2");
-  document.getElementsByClassName("container")[0].appendChild(div2);
-
-  let div3 = document.createElement("div");
-  div3.setAttribute("class", "row3");
-  document.getElementsByClassName("container")[0].appendChild(div3);
   /*===================================================================*/
 
   /*Get all daily*/
   for (let i = 0; i < dailyimage.length; i++) {
-    var div = document.createElement("div"); /*IMPORTANT DIV **DO NOT DELETE**/
-    const img = document.createElement("img");
-    const p = document.createElement("p");
-    const vbuck = document.createElement("img");
-    const price = document.createElement("p");
+    const div = document.createElement("div");
+    const background = document.createElement("img");
 
-    p.setAttribute("class", "column");
-    if (dailylist[i].name.length > 23) {
-      var name = dailylist[i].name.slice(0, 23);
-      var name = name + "...";
-      p.textContent = name;
-    } else {
-      p.textContent = dailylist[i].name;
-    }
+    div.setAttribute("class", "column");
 
-    price.setAttribute("class", "price");
-    price.textContent = dailylist[i].price;
-    vbuck.setAttribute("class", "vbuck");
-    vbuck.setAttribute("alt", "vbuck");
-    vbuck.setAttribute(
-      "src",
-      "https://image.fnbr.co/price/icon_vbucks_50x.png"
-    );
-    img.setAttribute("src", dailyimage[i]);
-    img.setAttribute("class", "img");
-    img.setAttribute("alt", `img${i}`);
-    document.getElementsByClassName("row")[0].appendChild(p);
-    document.getElementsByClassName("column")[i].appendChild(img);
-    document.getElementsByClassName("column")[i].appendChild(vbuck);
-    document.getElementsByClassName("column")[i].appendChild(price);
+    background.setAttribute("class", "background");
+    background.setAttribute("src", dailylist[i].full_background)
+
+    document.getElementsByClassName("row")[0].appendChild(div);
+    document.getElementsByClassName("column")[i].appendChild(background);
   }
 
   /*===================================================================*/
   /*Get all featured*/
   for (let i = 0; i < featuredimage.length; i++) {
-    const img = document.createElement("img");
-    const p = document.createElement("p");
-    const vbuck = document.createElement("img");
-    const price = document.createElement("p");
+    const div = document.createElement("div")
+    const background = document.createElement("img");
 
-    div.setAttribute("class", "column1");
-    price.setAttribute("class", "price");
-    price.textContent = featuredlist[i].price;
-    vbuck.setAttribute("class", "vbuck");
-    vbuck.setAttribute("alt", "vbuck");
-    vbuck.setAttribute(
-      "src",
-      "https://image.fnbr.co/price/icon_vbucks_50x.png"
-    );
-    p.setAttribute("class", "column1");
-    if (featuredlist[i].name.length > 23) {
-      var name = featuredlist[i].name.slice(0, 23);
-      var name = name + "...";
-      p.textContent = name;
-    } else {
-      p.textContent = featuredlist[i].name;
-    }
+    div.setAttribute("class", "column");
 
-    img.setAttribute("src", featuredimage[i]);
-    img.setAttribute("class", "img");
-    img.setAttribute("alt", `img${i}`);
-    document.getElementsByClassName("row2")[0].appendChild(p);
-    document.getElementsByClassName("column1")[i].appendChild(img);
-    document.getElementsByClassName("column1")[i].appendChild(vbuck);
-    document.getElementsByClassName("column1")[i].appendChild(price);
+    background.setAttribute("class", "background");
+    background.setAttribute("src", featuredlist[i].full_background)
+
+    document.getElementsByClassName("row")[0].appendChild(div);
+    document.getElementsByClassName("column")[i].appendChild(background);
   }
   for (let i = 0; i < specialFeaturedimage.length; i++) {
-    const img = document.createElement("img");
-    const p = document.createElement("p");
-    const vbuck = document.createElement("img");
-    const price = document.createElement("p");
+    var div = document.createElement("div")
+    const background = document.createElement("img");
 
-    div.setAttribute("class", "column2");
-    price.setAttribute("class", "price");
-    price.textContent = specialFeaturedlist[i].price;
-    vbuck.setAttribute("class", "vbuck");
-    vbuck.setAttribute("alt", "vbuck");
-    vbuck.setAttribute(
-      "src",
-      "https://image.fnbr.co/price/icon_vbucks_50x.png"
-    );
-    p.setAttribute("class", "column2");
-    if (specialFeaturedlist[i].name.length > 23) {
-      var name = specialFeaturedlist[i].name.slice(0, 23);
-      var name = name + "...";
-      p.textContent = name;
-    } else {
-      p.textContent = specialFeaturedlist[i].name;
-    }
-    img.setAttribute("src", specialFeaturedimage[i]);
-    img.setAttribute("class", "img");
-    img.setAttribute("alt", `img${i}`);
-    document.getElementsByClassName("row3")[0].appendChild(p);
-    document.getElementsByClassName("column2")[i].appendChild(img);
-    document.getElementsByClassName("column2")[i].appendChild(vbuck);
-    document.getElementsByClassName("column2")[i].appendChild(price);
+    div.setAttribute("class", "column");
+
+    background.setAttribute("class", "background");
+    background.setAttribute("src", specialFeaturedlist[i].full_background)
+
+    document.getElementsByClassName("row")[0].appendChild(div);
+    document.getElementsByClassName("column")[i].appendChild(background);
   }
-};
+}
