@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Daily Item Shop</title>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline';"
+    />
+    <script src="shop.js" type="text/javascript"></script>
+    <script src="upcoming.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <header>
+    <h1 class="title">LOJA DE ITENS</h1>
+    <button id="myButton" class="myButton">Ver itens vazados</button>
+
+    <script type="text/javascript">
+      document.getElementById("myButton").onclick = function () {
+        location.href = "upcoming.html";
+      };
+    </script>
+  </header>
+
+  <body class="container">
+    <div class="shop"></div>
+    <!-- <div class="upcoming"></div> -->
+  </body>
+</html>

@@ -8,7 +8,7 @@ function createWindow() {
       nodeIntegration: true,
     },
   });
-  win.loadFile("index.html");
+  win.loadFile("shop.html");
   win.once("ready-to-show", () => {
     win.show();
   });

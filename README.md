@@ -5,7 +5,7 @@ This application is an open source project that provides the Fortnite item shop 
 ## How to use
 
 For runnig this application it is required to install [Electron](https://www.electronjs.org/) in your machine and also an API key from [fortniteapi.io](https://fortniteapi.io/).
-Put your API key in the header inside the **script.js** file and compile it.
+Put your API key in the header inside the **shop.js** and **upcoming.js** files and compile it.
 
 ```
 http.setRequestHeader("Authorization","YOUR API KEY GOES HERE");

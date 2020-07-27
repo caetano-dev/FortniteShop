@@ -1,7 +1,7 @@
 {
   "name": "fortniteshop",
   "productName": "Fortnite Item Shop",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "description": "An app that shows the Fortnite item shop",
   "main": "main.js",
   "scripts": {
