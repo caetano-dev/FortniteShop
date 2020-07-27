@@ -41,10 +41,8 @@ http.onload = function () {
     const background = document.createElement("img");
 
     div.setAttribute("class", "column");
-
     background.setAttribute("class", "background");
     background.setAttribute("src", dailylist[i].full_background)
-
     document.getElementsByClassName("row")[0].appendChild(div);
     document.getElementsByClassName("column")[i].appendChild(background);
   }
@@ -56,22 +54,18 @@ http.onload = function () {
     const background = document.createElement("img");
 
     div.setAttribute("class", "column");
-
     background.setAttribute("class", "background");
     background.setAttribute("src", featuredlist[i].full_background)
-
     document.getElementsByClassName("row")[0].appendChild(div);
     document.getElementsByClassName("column")[i].appendChild(background);
   }
   for (let i = 0; i < specialFeaturedimage.length; i++) {
-    var div = document.createElement("div")
+    const div = document.createElement("div")
     const background = document.createElement("img");
 
     div.setAttribute("class", "column");
-
     background.setAttribute("class", "background");
     background.setAttribute("src", specialFeaturedlist[i].full_background)
-
     document.getElementsByClassName("row")[0].appendChild(div);
     document.getElementsByClassName("column")[i].appendChild(background);
   }
