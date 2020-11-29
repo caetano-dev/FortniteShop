@@ -15,11 +15,11 @@
       "target": [
         "nsis"
       ],
-      "icon": "icon.ico"
+      "icon": "./public/images/icon.ico"
     },
     "nsis": {
-      "installerIcon": "icon.ico",
-      "uninstallerIcon": "icon.ico",
+      "installerIcon": "./public/images/icon.ico",
+      "uninstallerIcon": "./public/images/icon.ico",
       "uninstallDisplayName": "fortniteshop",
       "license": "license.txt",
       "oneClick": false,
